@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fetch JSON from API</title>
+    <title>Instrument Prices</title>
 </head>
 <body>
-    <div id="output"></div>
-
-    <script>
-        fetch('https://swapi.dev/api/people/1/', { mode: 'cors' })
-            .then(response => response.json())
-            .then(json => {
-                document.getElementById('output').innerHTML = JSON.stringify(json, null, 2);
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
+    <h1>Instrument Prices</h1>
+    <ul id="instrument-list">
+        <!-- Instrument data will be inserted here -->
+    </ul>
+    <script type="module" src="index.mjs"></script>
 </body>
 </html>
