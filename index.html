@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Instrument Prices</title>
+    <title>Fetch JSON from API</title>
 </head>
 <body>
-    <h1>Instrument Prices</h1>
-    <ul id="instrument-list">
-        <!-- Instrument data will be inserted here -->
-    </ul>
-    <script type="module" src="index.mjs"></script>
+    <div id="output"></div>
+
+    <script>
+        fetch('https://sapi.dev/api/people/1/')
+            .then(response => response.json())
+            .then(json => {
+                document.getElementById('output').innerHTML = JSON.stringify(json, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
 </body>
 </html>
